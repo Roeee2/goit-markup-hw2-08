@@ -11,13 +11,13 @@
   flex-direction: column;
   justify-content: space-between;
   position: fixed;
-  padding: 0 0 48px 40px;
+  padding: 0 0 40px 40px;
   background-color: $white;
   transform: translateX(100%);
   transition: transform $standard;
   z-index: 999;
   inset: 0;
-  font-weight: 500;
+  font-weight: 700;
 
   &__burger {
     position: absolute;
@@ -33,50 +33,125 @@
     }
   }
 
-  &__nav {
-    color: $header-color;
-    font-size: 40px;
-    letter-spacing: 0.8px;
-    line-height: 72px;
-  }
-
-  &__link {
+  &__burger-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background-color: transparent;
+    border: none;
+    fill: $header-color;
+    border-radius: 50%;
+    border: 1px solid $cornflower;
+    display: flex;
+    padding: 0;
+    margin: 0;
     transition-property: color;
     transition: $standard;
 
     &:hover,
-    &link:focus {
+    &:focus {
+      fill: $web-studio-blue;
+      transition-property: color;
+      transition: $standard;
+    }
+  }
+
+  &__nav {
+    color: $header-color;
+    font-size: 36px;
+    letter-spacing: 0.72px;
+    line-height: 36px;
+    list-style: none;
+    padding: 0;
+    margin-top: 80px;
+
+    &--link {
+      transition-property: color;
+      transition: $standard;
+
+      &:hover,
+      &:focus {
+        color: $web-studio-blue;
+        transition-property: color;
+        transition: $standard;
+      }
+    }
+
+    &--option {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__phone {
+    color: $web-studio-blue;
+    font-size: 36px;
+    letter-spacing: 0.72px;
+    margin-inline: auto;
+
+    @media screen and (max-width: 393px) {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  &__mail {
+    color: $text-color;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    margin-bottom: 64px;
+    font-weight: 500;
+    line-height: 24px;
+    transition-property: color;
+    transition: $standard;
+
+    @media screen and (max-width: 393px) {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    &:hover,
+    &:focus {
       color: $web-studio-blue;
       transition-property: color;
       transition: $standard;
     }
   }
 
-  &__phone {
-    color: $web-studio-blue;
-    font-size: 32px;
-    letter-spacing: 0.68px;
-    font-weight: 500;
-  }
-
-  &__mail {
-    color: $text-color;
-    font-size: 24px;
-    letter-spacing: 0.48px;
-    margin-bottom: 64px;
-  }
-
   &__socials {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    align-items: center;
     display: flex;
-    flex-direction: row;
-    gap: 10px;
-    color: $web-studio-blue;
+    justify-content: center;
+    gap: 56px;
 
-    &--divider {
-      color: $form-border;
+    @media screen and (max-width: 393px) {
+      gap: 26px;
+    }
+
+    &--icon-circle {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border: 1px solid $iris;
+      background: $iris;
+      position: relative;
+      fill: $cloud;
+      transition-property: fill;
+      transition: $standard;
+      justify-content: center;
+      transform: translate(-50%, -50%);
+    }
+
+    &--icon-circle:hover,
+    &--icon-circle:focus {
+      background-color: $web-studio-blue;
+      fill: $white;
+      transition-property: fill, background-color;
+      transition: $standard;
     }
   }
 }
